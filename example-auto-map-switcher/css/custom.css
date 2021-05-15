@@ -1,0 +1,29 @@
+#container {
+    width: 1920px;
+    height: 1080px;
+}
+
+.map_mini {
+    text-align: right;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.map_mini img {
+    width: 640px;
+}
+
+.map_full {
+    width: 1920px;
+    height: 1080px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.map_full img {
+    margin: auto;
+    width: 1280px;
+    opacity: 0.8;
+}

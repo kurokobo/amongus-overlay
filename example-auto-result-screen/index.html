@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Load preconfigured CSS (Required BEFORE custom CSS) -->
+    <link rel="stylesheet" href="../common/css/common.css">
+
+    <!-- Load your custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Among Us Overlay</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Here is the place for your own HTML -->
+
+        <!-- Result Screen -->
+        <div id="auto_result_container">
+            <div id="timer"><span id="auto_result_timer"></span></div>
+
+            <h1>
+                🏆 <span class="auto_winrole"></span> won by
+                <span class="auto_reason"></span>
+            </h1>
+            <p class="players">
+                <span class="auto_winplayers"></span>
+            </p>
+
+            <h1>🤢 <span class="auto_loserole"></span></h1>
+            <p class="players">
+                <span class="auto_loseplayers"></span>
+            </p>
+
+            <h1>⏲️ Timelines</h1>
+            <ul id="auto_timeline_html"></ul>
+            <template id="auto_timeline_tmpl">
+                <li class="auto_timeline_root">
+                    🕙 <span class="auto_timeline_time"></span> <span class="auto_timeline_event"></span>
+                </li>
+            </template>
+
+            <div id="footer">
+                Start: <span class="auto_starttime"></span>,
+                End: <span class="auto_endtime"></span>,
+                Lasted: <span class="auto_duration"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Load your custom JavaScript -->
+    <script src="config.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Load preconfigured JavaScript (Required AFTER custom JS) -->
+    <script src="../common/js/websocket.js"></script>
+    <script src="../common/js/const.js"></script><!-- const_ja.js is also available for Japanese -->
+    <script src="../common/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Load preconfigured CSS (Required BEFORE custom CSS) -->
+    <link rel="stylesheet" href="../common/css/common.css">
+
+    <!-- Load your custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Among Us Overlay</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Here is the place for your own HTML -->
+
+        <!-- Mini map for lobby and tasks-->
+        <div class="per_state only_lobby only_tasks map_mini">
+            <img class="per_map only_skeld" src="assets/skeld.png">
+            <img class="per_map only_mira" src="assets/mira.png">
+            <img class="per_map only_polus" src="assets/polus.png">
+            <img class="per_map only_airship" src="assets/airship.png">
+        </div>
+
+        <!-- Large map for discussion-->
+        <div class="per_state only_discussion map_full">
+            <img class="per_map only_skeld" src="assets/skeld-full.png">
+            <img class="per_map only_mira" src="assets/mira-full.png">
+            <img class="per_map only_polus" src="assets/polus-full.png">
+            <img class="per_map only_airship" src="assets/airship-full.png">
+        </div>
+
+    </div>
+
+    <!-- Load your custom JavaScript -->
+    <script src="config.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Load preconfigured JavaScript (Required AFTER custom JS) -->
+    <script src="../common/js/websocket.js"></script>
+    <script src="../common/js/const.js"></script><!-- const_ja.js is also available for Japanese -->
+    <script src="../common/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Load preconfigured CSS (Required BEFORE custom CSS) -->
+    <link rel="stylesheet" href="../common/css/common.css">
+
+    <!-- Load your custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Among Us Overlay</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Here is the place for your own HTML -->
+
+        <!-- Template for Per-Player Status -->
+        <ul id="auto_players_html"></ul>
+        <template id="auto_players_tmpl">
+            <li class="auto_player_root">
+                <img class="auto_player_img"><br>
+                <span class="auto_player_name"></span>
+            </li>
+        </template>
+
+    </div>
+
+    <!-- Load your custom JavaScript -->
+    <script src="config.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Load preconfigured JavaScript (Required AFTER custom JS) -->
+    <script src="../common/js/websocket.js"></script>
+    <script src="../common/js/const.js"></script><!-- const_ja.js is also available for Japanese -->
+    <script src="../common/js/main.js"></script>
+</body>
+
+</html>

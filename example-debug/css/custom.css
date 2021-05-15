@@ -1,0 +1,47 @@
+#container {
+    width: 850px;
+    font-family: 'Nova Mono';
+    font-size: 24px;
+    font-weight: bold;
+    color: #ccc;
+    text-align: left;
+}
+
+#log {
+    width: 850px;
+    height: 180px;
+    background-color: #333;
+    font-family: 'Nova Mono';
+    font-size: 18px;
+    color: #ccc;
+}
+
+h1 {
+    font-family: 'Sigmar One';
+    font-size: 36px;
+    font-weight: normal;
+    color: #08d;
+}
+
+h2 {
+    font-family: 'Sigmar One';
+    font-size: 24px;
+    font-weight: normal;
+    color: #08d;
+}
+
+th {
+    vertical-align: top;
+    color: #08d;
+    padding-right: .5em
+}
+
+img {
+    width: 64px;
+}
+
+li {
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+}

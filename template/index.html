@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Load preconfigured CSS (Required BEFORE custom CSS) -->
+    <link rel="stylesheet" href="../common/css/common.css">
+
+    <!-- Load your custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Among Us Overlay</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Here is the place for your own HTML -->
+
+        <!--
+            Usefull Pre-Defined Per-State / Per-Map Classes
+            - Used to toggle show / hide elements per state or per map
+ 
+                Per State classes:
+                - per_state (always required any other only_* classes is used)
+                - only_lobby
+                - only_tasks
+                - only_discussion
+                - only_menu
+                - only_gameover
+
+                Per Map classes:
+                - per_map (always required any other only_* classes is used)
+                - only_skeld
+                - only_mira
+                - only_polus
+                - only_airship
+        -->
+        <!-- Example Usage for Per-State / Per-Map Classes -->
+        <div>
+            <div class="per_state only_lobby">
+                Any contents here will be displayed only in Lobby state.
+            </div>
+            <div class="per_state only_lobby only_tasks only_discussion">
+                Any contents here will be displayed only in Lobby, Tasks, or Discussion state.
+                <div class="per_map only_skeld">
+                    Any contents here will be displayed only in Lobby, Tasks, or Discussion state,
+                    in addition only the map The Skeld selected.
+                </div>
+            </div>
+            Any contents here will be always displayed.
+        </div>
+
+        <!--
+            Usefull Pre-Defined Classes for Embedding
+            - Used to update text dynamically
+            - See "example-debug" for example
+ 
+                Game State or Lobby Information:
+                - auto_progress
+                - auto_newstate
+                - auto_oldstate
+                - auto_lobbycode
+                - auto_map
+                - auto_region
+
+                Game Result Information: Updated when the Game Over event has triggered.
+                                         Note that this is NOT when Victory/Defeat screen is displayed,
+                                         but when "PLAY AGAIN" or "QUIT" is clicked.
+                - auto_winrole
+                - auto_winplayers
+                - auto_loserole
+                - auto_loseplayers
+                - auto_reason
+                - auto_starttime
+                - auto_endtime
+                - auto_duration
+        -->
+        <!-- Example Usage for Embedding -->
+        <table>
+            <tr>
+                <th>PROGRESS</th>
+                <td class="auto_progress"></td>
+            </tr>
+            <tr>
+                <th>CURRENT STATE</th>
+                <td class="auto_newstate"></td>
+            </tr>
+            <tr>
+                <th>LOBBY CODE</th>
+                <td class="auto_lobbycode"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>LAST GAME WON BY</th>
+                <td class="auto_winrole"></td>
+            </tr>
+            <tr>
+                <th>REASON</th>
+                <td class="auto_reason"></td>
+            </tr>
+            <tr>
+                <th>WINNER</th>
+                <td class="auto_winplayers"></td>
+            </tr>
+        </table>
+
+        <!--
+            Usefull Pre-Defined Classes for Templating for Player's State
+            - Used to update Player's state dynamically
+            - Of course this is Spoiler-free, dead player is never updated until Discussion is started
+
+                Required IDs:
+                - auto_players_html: Root object to embed object using temlates, like <ul> or <table>
+                - auto_players_tmpl: Template HTML including objects with required classes
+
+                Required Classes:
+                - auto_player_root: Root object for Per-Player object
+                - auto_player_img: Specify in <img> tag that player's image to be embbed
+                - auto_player_name: Specify in any tag that has InnerText will be filled with Player's Name
+
+                Additional Classes to be used to decolate object:
+                - liveness_alive: Added next to "auto_player_root" when the Player is Alive
+                - liveness_dead: Added next to "auto_player_root" when the Player is Dead
+                - status_disconnected: Added next to "auto_player_root" when the Player is Disconnected
+                - status_exiled: Added next to "auto_player_root" when the Player is Exiled
+        -->
+        <!-- Example Usage for Templating -->
+        <ul id="auto_players_html"></ul>
+        <template id="auto_players_tmpl">
+            <li class="auto_player_root">
+                <img class="auto_player_img"><br>
+                <span class="auto_player_name"></span>
+            </li>
+        </template>
+
+        <!--
+            Usefull Pre-Defined Classes for Templating for Timeline View of the Last Game
+
+                Required IDs:
+                - auto_timeline_html: Root object to embed object using temlates, like <ul> or <table>
+                - auto_timeline_tmpl: Template HTML including objects with required classes
+
+                Required Classes:
+                - auto_timeline_root: Root object for Per-Event object
+                - auto_timeline_time: Specify in any tag that has InnerText will be filled with the time of the Event
+                - auto_timeline_event: Specify in any tag that has InnerText will be filled with the description of the Event
+
+                Additional Classes to be used to decolate object:
+                - event_tasks: Added next to "auto_timeline_root" for the Event with Tasks
+                - event_discussion: Added next to "auto_timeline_root" for the Event with Discussion
+                - event_kill: Added next to "auto_timeline_root" for the Event with Kill
+                - event_disconnect: Added next to "auto_timeline_root" for the Event with Disconnection
+                - event_exile: Added next to "auto_timeline_root" for the Event with Exile
+        -->
+        <!-- Example Usage for Templating -->
+        <table id="auto_timeline_html"></table>
+        <template id="auto_timeline_tmpl">
+            <tr class="auto_timeline_root">
+                <th>✔️ <span class="auto_timeline_time"></span></th>
+                <td><span class="auto_timeline_event"></span></td>
+            </tr>
+        </template>
+
+        <!--
+            Special IDs to show / hide Result Screen
+            - Note that timeout seconds to hide Result Screen can be specified in config.js
+
+                Required IDs:
+                - auto_result_container: Wrapper of the elements to be used show / hide Result Screen
+                - auto_result_timer: To be used to show rest of time to hide Result Screen
+        -->
+        <!-- Example Usage for Templating -->
+        <div id="auto_result_container">
+            <h1>LAST GAME RESULT (<span id="auto_result_timer"></span> s left to be hidden)</h1>
+
+            <h2>🏆 <span class="auto_winrole"></span></h2>
+            <p><span class="auto_winplayers"></span></p>
+        </div>
+
+    </div>
+
+    <!-- Load your custom JavaScript -->
+    <script src="config.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Load preconfigured JavaScript (Required AFTER custom JS) -->
+    <script src="../common/js/websocket.js"></script>
+    <script src="../common/js/const.js"></script><!-- const_ja.js is also available for Japanese -->
+    <script src="../common/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+ /* Write your own CSS here */
+#auto_result_container {
+    width: 1280px;
+    height: 720px;
+    border: 0px;
+    color: #000;
+    background-image: url("../assets/background.png");
+    padding: 100px 50px 50px 50px;
+    box-sizing: border-box;    
+    position: relative;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0.5em 0.2em 0.2em 0.2em;
+    font-size: 30px;
+}
+
+ul {
+    margin: 0.2em 1em 0.2em 1em;
+    padding: 0px;
+    column-count: 3;
+}
+
+li {
+    font-size: 20px;
+}
+
+.players {
+    margin: 0em 1em;
+    font-size: 24px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 1em;
+    font-size: 20px;
+}
+
+#timer {
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    font-size: 48px;
+    color: #f00;
+}

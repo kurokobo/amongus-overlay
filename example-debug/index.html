@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../common/css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <title>Among Us Overlay</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>ℹ️ STATUS</h1>
+        <table>
+            <tr>
+                <th>✔️ STATE</th>
+                <td>
+                    <span class="auto_progress"></span><br>
+                    <span class="auto_newstate"></span> ⬅️ <span class="auto_oldstate"></span><br>
+                    <table>
+                        <tr>
+                            <th>LOBBY</th>
+                            <th>TASKS</th>
+                            <th>DISCUSSION</th>
+                            <th>MENU</th>
+                            <th>GAMEOVER</th>
+                        </tr>
+                        <tr>
+                            <td><span class="per_state only_lobby">🚨</span></td>
+                            <td><span class="per_state only_tasks">🚨</span></td>
+                            <td><span class="per_state only_discussion">🚨</span></td>
+                            <td><span class="per_state only_menu">🚨</span></td>
+                            <td><span class="per_state only_gameover">🚨</span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>✔️ ROOM</th>
+                <td><span class="auto_lobbycode"></span></td>
+            </tr>
+            <tr>
+                <th>✔️ MAP</th>
+                <td>
+                    <span class="auto_map"></span>
+                    <table>
+                        <tr>
+                            <th>SKELD</th>
+                            <th>MIRA</th>
+                            <th>POLUS</th>
+                            <th>AIRSHIP</th>
+                        </tr>
+                        <tr>
+                            <td><span class="per_map only_skeld">🗺️</span></td>
+                            <td><span class="per_map only_mira">🗺️</span></td>
+                            <td><span class="per_map only_polus">🗺️</span></td>
+                            <td><span class="per_map only_airship">🗺️</span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>✔️ REGION</th>
+                <td><span class="auto_region"></span></td>
+            </tr>
+        </table>
+
+        <h1>ℹ️ PLAYERS</h1>
+        <ul id="auto_players_html"></ul>
+        <template id="auto_players_tmpl">
+            <li class="auto_player_root">
+                <img class="auto_player_img"><br>
+                <span class="auto_player_name"></span>
+            </li>
+        </template>
+
+        <div id="auto_result_container">
+            <h1>ℹ️ LAST GAME RESULT ⏲️<span id="auto_result_timer"></span></h1>
+
+            <h2>🏆 <span class="auto_winrole"></span></h2>
+            <p><span class="auto_winplayers"></span></p>
+
+            <h2>🤢 <span class="auto_loserole"></span></h2>
+            <p><span class="auto_loseplayers"></span></p>
+
+            <h2>💡 Reason</h2>
+            <p><span class="auto_reason"></span></p>
+
+            <h2>🕛 Time</h2>
+            <table>
+                <tr>
+                    <th>✔️ START</th>
+                    <td><span class="auto_starttime"></span></td>
+                </tr>
+                <tr>
+                    <th>✔️ END</th>
+                    <td><span class="auto_endtime"></span></td>
+                </tr>
+                <tr>
+                    <th>✔️ DURATION</th>
+                    <td><span class="auto_duration"></span></td>
+                </tr>
+            </table>
+
+            <h2>📋 Timeline</h2>
+            <table id="auto_timeline_html"></table>
+            <template id="auto_timeline_tmpl">
+                <tr class="auto_timeline_root">
+                    <th>✔️ <span class="auto_timeline_time"></span></th>
+                    <td><span class="auto_timeline_event"></span></td>
+                </tr>
+            </template>
+        </div>
+
+        <h1>ℹ️ LOGS</h1>
+        <textarea id="log" wrap="off"></textarea>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script src="../common/js/websocket.js"></script>
+    <script src="../common/js/const.js"></script><!-- const_ja.js is also available for Japanese -->
+    <script src="../common/js/main.js"></script>
+</body>
+
+</html>
