@@ -49,7 +49,7 @@ Next, click the gear icon on the upper-left corner and open `[Settings]` > `[Gen
 
 ### Prepare AmongUsOverlay
 
-[Download this repository](https://github.com/kurokobo/amongus-overlay/archive/refs/heads/main.zip), then extract it and launch `AmongUsOverlay.bat`. Note that [Caddy](https://caddyserver.com/) (a lightweight HTTP server) will be downloaded automatically on the first startup.
+[Download the latest version of AmongUsOverlay via Release page](https://github.com/kurokobo/amongus-overlay/releases), then extract it and launch `AmongUsOverlay.bat`. Note that [Caddy](https://caddyserver.com/) (a lightweight HTTP server) will be downloaded automatically on the first startup.
 
 ![Starting Up](https://user-images.githubusercontent.com/2920259/118363954-95be4880-b5d1-11eb-928b-217822253bcd.png)
 
