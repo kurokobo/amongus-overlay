@@ -33,7 +33,7 @@ This can be changed in `config.js`. See the comments in `config.js` for the deta
 
 ## Ideas to Customize This Example
 
-* Replace `../common/assets/*.png` with your own image
+* Place your own images as `assets/*.png` and point those images in `config.js` (See comments in `config.js`)
 * Change the layout of the players using `css/custom.css`
 * Change the mode in `config.js`
 

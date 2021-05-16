@@ -14,4 +14,20 @@ const auto_players = {
         "Orange",
         "White",
     ],
+
+    // Specify images path if you want to use your own image
+    //assets = {
+    //    black: {
+    //        alive: "../common/assets/aublack.png",
+    //        dead: "../common/assets/aublackdead.png",
+    //    },
+    //    blue: {
+    //        alive: "../common/assets/aublack.png",
+    //        dead: "../common/assets/aublackdead.png",
+    //    },
+    //    <color-name:> {
+    //        alive: "<path>",
+    //        dead: "<path>",
+    //    },
+    //}
 }
