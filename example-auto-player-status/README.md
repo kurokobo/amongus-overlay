@@ -1,6 +1,6 @@
 # (Example) Automatic Player Status
 
-![Player Status](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/example-auto-player-status.gif)
+![Player Status](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/example-auto-player-status.gif)
 
 ## How this works
 
@@ -25,9 +25,9 @@ To avoid spoilers, dead players will be updated after you enter the discussion.
 
 AmongUsOverlay has two modes called **Fixed** and **Dynamic** to display players' status.
 
-![Fixed Mode](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/example-auto-player-status-fixed.gif)
+![Fixed Mode](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/example-auto-player-status-fixed.gif)
 
-![Dynamic Mode](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/example-auto-player-status-dynamic.gif)
+![Dynamic Mode](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/example-auto-player-status-dynamic.gif)
 
 This can be changed in `config.js`. See the comments in `config.js` for the detail.
 

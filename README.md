@@ -10,7 +10,7 @@ Dynamically update the overlay for the OBS according to the Among Us status, i.e
 * Show the match summary at the end of the game.
 * Build your own overlay using simple HTML + CSS with predefined classes and IDs.
 
-![demo](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/merged.gif)
+![demo](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/merged.gif)
 
 This repository includes some ready-to-use demos, but they can be easily customized and easily create your own overlay using HTML and CSS. If you have experience with JavaScript, now you can customize everything.
 

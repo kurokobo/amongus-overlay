@@ -1,6 +1,6 @@
 # (Example) Automatic Map Switcher
 
-![Map Switcher](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/example-auto-map-switcher.gif)
+![Map Switcher](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/example-auto-map-switcher.gif)
 
 ## How this works
 

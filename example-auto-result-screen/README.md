@@ -1,6 +1,6 @@
 # (Example) Automatic Result Screen
 
-![Result Screen](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/example-auto-result-screen.gif)
+![Result Screen](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/example-auto-result-screen.gif)
 
 The Result Screen includes players who won the game, roles, and events in the game, etc.
 

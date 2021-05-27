@@ -1,6 +1,6 @@
 # (Example) Automatic Lobby Code Censor
 
-![Lobby Code Censor](https://media.githubusercontent.com/media/kurokobo/storage/main/amongus-overlay/example-auto-lobbycode-censor.gif)
+![Lobby Code Censor](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/example-auto-lobbycode-censor.gif)
 
 ## How this works
 
