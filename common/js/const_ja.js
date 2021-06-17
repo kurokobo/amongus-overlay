@@ -13,6 +13,12 @@ const COLOR = {
     BROWN: 9,
     CYAN: 10,
     LIME: 11,
+    MAROON: 12,
+    ROSE: 13,
+    BANANA: 14,
+    GRAY: 15,
+    TAN: 16,
+    SUNSET: 17,
 }
 
 const COLOR_NAME = [
@@ -28,6 +34,12 @@ const COLOR_NAME = [
     "Brown",
     "Cyan",
     "Lime",
+    "Maroon",
+    "Rose",
+    "Banana",
+    "Gray",
+    "Tan",
+    "Sunset",
 ]
 
 const EVENT = {
@@ -218,5 +230,29 @@ const DEFAULT_ASSETS = {
     yellow: {
         alive: "../common/assets/yellow.png",
         dead: "../common/assets/yellow-dead.png",
+    },
+    maroon: {
+        alive: "../common/assets/maroon.png",
+        dead: "../common/assets/maroon-dead.png",
+    },
+    rose: {
+        alive: "../common/assets/rose.png",
+        dead: "../common/assets/rose-dead.png",
+    },
+    banana: {
+        alive: "../common/assets/banana.png",
+        dead: "../common/assets/banana-dead.png",
+    },
+    gray: {
+        alive: "../common/assets/gray.png",
+        dead: "../common/assets/gray-dead.png",
+    },
+    tan: {
+        alive: "../common/assets/tan.png",
+        dead: "../common/assets/tan-dead.png",
+    },
+    sunset: {
+        alive: "../common/assets/sunset.png",
+        dead: "../common/assets/sunset-dead.png",
     },
 }
