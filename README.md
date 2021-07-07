@@ -4,11 +4,11 @@
 
 Dynamically update the overlay for the OBS according to the Among Us status, i.e.:
 
-* Automatically hide your Lobby Code only when you are in the Lobby.
-* Display players and update its icons according to the liveness for each players
-* Automatically display appropreate maps and switch the map version depends on the phase in the game (Tasks, Discussion, etc.)
-* Show the match summary at the end of the game.
-* Build your own overlay using simple HTML + CSS with predefined classes and IDs.
+- Automatically hide your Lobby Code only when you are in the Lobby.
+- Display players and update its icons according to the liveness for each players
+- Automatically display appropreate maps and switch the map version depends on the phase in the game (Tasks, Discussion, etc.)
+- Show the match summary at the end of the game.
+- Build your own overlay using simple HTML + CSS with predefined classes and IDs.
 
 ![demo](https://github.com/kurokobo/blob-storage/blob/main/amongus-overlay/merged.gif)
 
@@ -19,6 +19,25 @@ For example, if you want to display images only when you in the Lobby, all you n
 ```html
 <img class="per_state only_lobby" src="<path/to/image>">
 ```
+
+## Table of Contents
+
+- [AmongUsOverlay: Among Us Dynamic Overlay for OBS](#amongusoverlay-among-us-dynamic-overlay-for-obs)
+  - [Table of Contents](#table-of-contents)
+  - [How This Works](#how-this-works)
+  - [Demos / Examples](#demos--examples)
+  - [Getting Started](#getting-started)
+    - [Prepare AmongUsCapture](#prepare-amonguscapture)
+    - [Prepare AmongUsOverlay](#prepare-amongusoverlay)
+    - [Testing](#testing)
+    - [Use in OBS](#use-in-obs)
+    - [Reuse the Browser Sources you've created for the Next Time](#reuse-the-browser-sources-youve-created-for-the-next-time)
+  - [Tips](#tips)
+  - [Customization](#customization)
+    - [Customize Demos](#customize-demos)
+    - [Build Your Own Overlay](#build-your-own-overlay)
+    - [Other Customization](#other-customization)
+  - [Related Projects](#related-projects)
 
 ## How This Works
 
@@ -34,10 +53,10 @@ Technically, it receives information about in-game state via WebSocket from a to
 
 See the example implementations and how they work:
 
-* [▶️ Hide Lobby Code Automatically](example-auto-lobbycode-censor)
-* [▶️ Display Players' Liveness Dynamically](example-auto-player-status)
-* [▶️ Automated Map Switcher](example-auto-map-switcher)
-* [▶️ Display Match Summary and Timelines when the Game is Over](example-auto-result-screen)
+- [▶️ Hide Lobby Code Automatically](example-auto-lobbycode-censor)
+- [▶️ Display Players' Liveness Dynamically](example-auto-player-status)
+- [▶️ Automated Map Switcher](example-auto-map-switcher)
+- [▶️ Display Match Summary and Timelines when the Game is Over](example-auto-result-screen)
 
 ## Getting Started
 
@@ -69,24 +88,38 @@ If everything works good, the page in your browser updated automatically like th
 
 Launch the OBS then add multiple **Browser** source with following URLs and size to see how preconfigured demos work. Nothing shows up until you start the game, which is expected.
 
-| Demos | URL | Recommended Size |
-|-|-|-|
-| [📁 Hide Lobby Code Automatically](example-auto-lobbycode-censor) | `http://localhost:42080/example-auto-lobbycode-censor/` | `480` x `240` |
-| [📁 Display Players' Liveness](example-auto-player-status) | `http://localhost:42080/example-auto-player-status/` | `1500` x `240` |
-| [📁 Map Switcher](example-auto-map-switcher) | `http://localhost:42080/example-auto-map-switcher/` | `1920` x `1080` |
-| [📁 Result Screen](example-auto-result-screen) | `http://localhost:42080/example-auto-result-screen/` | `1280` x `720` |
+| Demos                                                            | URL                                                     | Recommended Size |
+| ---------------------------------------------------------------- | ------------------------------------------------------- | ---------------- |
+| [📁 Hide Lobby Code Automatically](example-auto-lobbycode-censor) | `http://localhost:42080/example-auto-lobbycode-censor/` | `480` x `240`    |
+| [📁 Display Players' Liveness](example-auto-player-status)        | `http://localhost:42080/example-auto-player-status/`    | `1500` x `240`   |
+| [📁 Map Switcher](example-auto-map-switcher)                      | `http://localhost:42080/example-auto-map-switcher/`     | `1920` x `1080`  |
+| [📁 Result Screen](example-auto-result-screen)                    | `http://localhost:42080/example-auto-result-screen/`    | `1280` x `720`   |
 
 Now enter the Lobby and play the game! Your overlay will be updated dynamically.
 
+### Reuse the Browser Sources you've created for the Next Time
+
+After the initial setup and test in the previous steps, if you quit OBS and start it again, the overlay display may not be automatically updated properly.
+
+Once this happened, you should open the `Properties` for every Browser souce on OBS and click `Refresh cache of current page`.
+
+![Refresh cache of current page](https://user-images.githubusercontent.com/2920259/124773552-0487a480-df78-11eb-9791-ef19ba17f0fa.png)
+
+This is because the Browser source of OBS does not necessarily load the page dynamically, but may just display the internally cached images.
+
+Note that only the data received after clicking `Refresh cache of current page` will be used for the overlay display in OBS. For reliable tracking, it is recommended that you do this before launching Among Us (or at least before entering the lobby).
+
 ## Tips
 
-* **AmongUsCapture** and **AmongUsOverlay** must both be running at all times.
-* **The recommended startup order** is the following. If you start them in any other order, **the game status may not be tracked properly**.
-  * AmongUsCapture
-  * AmongUsOverlay
-  * OBS (including adding Browser sources)
-  * Among Us
-* If the player status in the overlay goes wrong, re-enter the Lobby or use the PC on Lobby to change the player's color once and change it back.
+- **AmongUsCapture** and **AmongUsOverlay** must both be running at all times.
+- **The recommended startup order** is the following. If you start them in any other order, **the game status may not be tracked properly**.
+  1. **AmongUsCapture**
+  2. **AmongUsOverlay**
+  3. **OBS**
+     - Including adding Browser sources
+     - Or to reuse exising Browser sources you've created before, invoke `Refresh cache of current page` as described above
+  4. **Among Us**
+- If the player status in the overlay goes wrong, re-enter the Lobby or use the PC on Lobby to change the player's color once and change it back.
 
 ## Customization
 
@@ -94,10 +127,10 @@ Now enter the Lobby and play the game! Your overlay will be updated dynamically.
 
 See `README.md` for each directory.
 
-* [📁 **example-auto-lobbycode-censor**](example-auto-lobbycode-censor)
-* [📁 **example-auto-player-status**](example-auto-player-status)
-* [📁 **example-auto-map-switcher**](example-auto-map-switcher)
-* [📁 **example-auto-result-screen**](example-auto-result-screen)
+- [📁 **example-auto-lobbycode-censor**](example-auto-lobbycode-censor)
+- [📁 **example-auto-player-status**](example-auto-player-status)
+- [📁 **example-auto-map-switcher**](example-auto-map-switcher)
+- [📁 **example-auto-result-screen**](example-auto-result-screen)
 
 ### Build Your Own Overlay
 
@@ -107,10 +140,10 @@ See `README.md` in [📁 **template**](template) directory.
 
 ### Other Customization
 
-* **Change the port that HTTP server listening**
-  * Change `:42080` in `AmongUsOverlay.bat`.
-* **Use AmongUsCapture running on a different PC**
-  * Change `const ENDPOINT = "ws://localhost:42069/api"` in `common/js/const.js`.
+- **Change the port that HTTP server listening**
+  - Change `:42080` in `AmongUsOverlay.bat`.
+- **Use AmongUsCapture running on a different PC**
+  - Change `const ENDPOINT = "ws://localhost:42069/api"` in `common/js/const.js`.
 
 ## Related Projects
 
@@ -118,12 +151,12 @@ The following projects, products, and pages have been of great help to AmongUsOv
 
 I greatly appreciate for these professionals and expertise.
 
-* **[Among Us](https://innersloth.com/gameAmongUs.php) by [InnerSloth](https://innersloth.com/)**
-  * Thanks for the awesome game
-  * They have all the rights to the images and trademarks
-* **[AmongUsCapture](https://github.com/automuteus/amonguscapture)**
-  * Thanks for awesome memory reader and wonderful APIs, and some graphics of the players
-* **[Among Us Wiki](https://among-us.fandom.com/)**
-  * Thanks for great information about this game, and some graphics of the maps
-* **[Caddy](https://caddyserver.com/)**
-  * Thanks for the great web server
+- **[Among Us](https://innersloth.com/gameAmongUs.php) by [InnerSloth](https://innersloth.com/)**
+  - Thanks for the awesome game
+  - They have all the rights to the images and trademarks
+- **[AmongUsCapture](https://github.com/automuteus/amonguscapture)**
+  - Thanks for awesome memory reader and wonderful APIs, and some graphics of the players
+- **[Among Us Wiki](https://among-us.fandom.com/)**
+  - Thanks for great information about this game, and some graphics of the maps
+- **[Caddy](https://caddyserver.com/)**
+  - Thanks for the great web server
