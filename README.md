@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # AmongUsOverlay: Among Us Dynamic Overlay for OBS
 
 **AmongUsOverlay** is a fully customizable Among Us Dynamic Overlay for OBS.
@@ -20,24 +21,23 @@ For example, if you want to display images only when you in the Lobby, all you n
 <img class="per_state only_lobby" src="<path/to/image>">
 ```
 
+<!-- omit in toc -->
 ## Table of Contents
 
-- [AmongUsOverlay: Among Us Dynamic Overlay for OBS](#amongusoverlay-among-us-dynamic-overlay-for-obs)
-  - [Table of Contents](#table-of-contents)
-  - [How This Works](#how-this-works)
-  - [Demos / Examples](#demos--examples)
-  - [Getting Started](#getting-started)
-    - [Prepare AmongUsCapture](#prepare-amonguscapture)
-    - [Prepare AmongUsOverlay](#prepare-amongusoverlay)
-    - [Testing](#testing)
-    - [Use in OBS](#use-in-obs)
-    - [Reuse the Browser Sources you've created for the Next Time](#reuse-the-browser-sources-youve-created-for-the-next-time)
-  - [Tips](#tips)
-  - [Customization](#customization)
-    - [Customize Demos](#customize-demos)
-    - [Build Your Own Overlay](#build-your-own-overlay)
-    - [Other Customization](#other-customization)
-  - [Related Projects](#related-projects)
+- [How This Works](#how-this-works)
+- [Demos / Examples](#demos--examples)
+- [Getting Started](#getting-started)
+  - [Prepare AmongUsCapture](#prepare-amonguscapture)
+  - [Prepare AmongUsOverlay](#prepare-amongusoverlay)
+  - [Testing](#testing)
+  - [Use in OBS](#use-in-obs)
+  - [Reuse the Browser Sources you've created for the Next Time](#reuse-the-browser-sources-youve-created-for-the-next-time)
+- [Tips](#tips)
+- [Customization](#customization)
+  - [Customize Demos](#customize-demos)
+  - [Build Your Own Overlay](#build-your-own-overlay)
+  - [Other Customization](#other-customization)
+- [Related Projects](#related-projects)
 
 ## How This Works
 
@@ -88,12 +88,12 @@ If everything works good, the page in your browser updated automatically like th
 
 Launch the OBS then add multiple **Browser** source with following URLs and size to see how preconfigured demos work. Nothing shows up until you start the game, which is expected.
 
-| Demos                                                            | URL                                                     | Recommended Size |
-| ---------------------------------------------------------------- | ------------------------------------------------------- | ---------------- |
-| [📁 Hide Lobby Code Automatically](example-auto-lobbycode-censor) | `http://localhost:42080/example-auto-lobbycode-censor/` | `480` x `240`    |
-| [📁 Display Players' Liveness](example-auto-player-status)        | `http://localhost:42080/example-auto-player-status/`    | `1500` x `240`   |
-| [📁 Map Switcher](example-auto-map-switcher)                      | `http://localhost:42080/example-auto-map-switcher/`     | `1920` x `1080`  |
-| [📁 Result Screen](example-auto-result-screen)                    | `http://localhost:42080/example-auto-result-screen/`    | `1280` x `720`   |
+| Demos                                                            | URL                                                     | Recommended Size                    |
+| ---------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------- |
+| [📁 Hide Lobby Code Automatically](example-auto-lobbycode-censor) | `http://localhost:42080/example-auto-lobbycode-censor/` | W `480`<br>H  `240`                 |
+| [📁 Display Players' Liveness](example-auto-player-status)        | `http://localhost:42080/example-auto-player-status/`    | W `150 * <# of Players>`<br>H `240` |
+| [📁 Map Switcher](example-auto-map-switcher)                      | `http://localhost:42080/example-auto-map-switcher/`     | W `1920`<br>H `1080`                |
+| [📁 Result Screen](example-auto-result-screen)                    | `http://localhost:42080/example-auto-result-screen/`    | W `1280`<br>H `720`                 |
 
 Now enter the Lobby and play the game! Your overlay will be updated dynamically.
 
